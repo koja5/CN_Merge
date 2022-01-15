@@ -137,7 +137,7 @@ app.get('*', (req, res) => {
 /**
  * Get port from environment and store in Express.
  */
-const port = process.env.PORT || '8080';
+const port = process.env.PORT || '3030';
 app.set('port', port);
 
 /**
@@ -168,5 +168,5 @@ var j = schedule.scheduleJob('00 03 * * *', function(){
 });
 
  
-server.listen(port, '116.203.85.82');
+server.listen(port, () => console.log("Success!"));
 server.timeout = 500000;
