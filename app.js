@@ -122,7 +122,7 @@ app.use(session({ secret: "management", resave: false, saveUninitialized: true, 
 app.use(morgan('dev'));
 
 // Point static path to dist
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'src')));
 
 // Set our api routes
 app.use('/api', api);
@@ -131,7 +131,7 @@ app.use('/api', mongo);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist/index.html'));
+    res.sendFile(path.join(__dirname, 'src/index.html'));
 });
 
 /**
